@@ -1,0 +1,118 @@
+\documentclass[a4paper,12pt]{article} % [usenames] {article}
+
+% ------------ Packages -------------
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[T1]{fontenc} 
+\usepackage{anysize}    % Margins
+\usepackage{fancyhdr}   % Headers and footers
+\usepackage{caption,fixltx2e}
+\usepackage[breaklinks]{hyperref}
+%\usepackage{svg}
+\usepackage{graphicx}
+%\usepackage{subfigure}
+%\usepackage{eurosym}
+%\usepackage{amsmath}
+%\usepackage{footnote}
+%\usepackage{listings}
+\usepackage{float}
+\usepackage{color}
+\usepackage{colortbl} % Colorear celdas
+%\usepackage{hhline}
+%\usepackage{multicol}
+%\usepackage{multicolumn}
+%\usepackage{multirow}
+%\usepackage{framed}
+\usepackage{courier}
+\usepackage{indentfirst}
+\usepackage{multicol}
+\usepackage{verbatimbox}
+\usepackage{graphicx}
+\usepackage{cite}
+\usepackage{subcaption}
+\usepackage{neuralnetwork}
+\usepackage{titlesec}
+
+
+
+% ------------- Style ---------------
+
+\hypersetup{
+	colorlinks   = true,	% Colours links instead of ugly boxes
+	urlcolor     = blue,	% Colour for external hyperlinks
+	linkcolor    = black,	% Colour of internal links
+	citecolor   = blue		% Colour of citations
+}
+
+\marginsize{2.25cm}{2.25cm}{2cm}{2cm}
+\setlength{\parskip}{\baselineskip}
+% Make numbering begins at 1, not at 0.
+\renewcommand{\thesection}{\arabic{section}}
+%\addto\captionsspanish{\renewcommand{\chaptername}{Practice}}
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+
+\renewcommand\labelitemi{\scriptsize$\bullet$} %Set bullets as default item symbol
+\AtBeginDocument{\addtocontents{toc}{\protect\thispagestyle{empty}}}
+
+
+
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+
+% ------- NewCommand -------
+\newcommand{\tab}{\indent}
+
+
+
+
+% ------- Variables -------
+\def \frontTitle {Lógica difusa}
+\def \authorOne {Eva \\login}
+\def \authorTwo { Rafa \\ login}
+\def \authorThree {Iago \\ login}
+\def \authorFour {Rivas Fariñas, Manuel José \\manuel.rivasf@udc.es}
+
+
+\def \subject {Razonamiento Automático}
+\def \course {3º Grado en Ingeniería Informática \\ Mención de Computación }
+\def \place {A Coruña } 
+
+% ------- Document -------
+
+\begin{document}
+	
+	% ------- TitlePage -------
+	
+	\input{portada}
+	\newpage
+	\thispagestyle{empty}
+	
+	% ------- Index -------
+	
+	\tableofcontents
+	
+	% ------- Style -------
+	\newpage
+	\setcounter{page}{1}
+	\pagestyle{plain} %{plain}
+	
+	\hypersetup{
+		linkcolor = blue, % Colour of internal links
+	}
+
+
+
+	% ------- Content -------
+	\input{anteproyecto}
+	\input{planteamiento}
+	\input{desarrollo}
+	\input{implementación}
+	
+	
+\end{document}
