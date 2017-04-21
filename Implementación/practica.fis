@@ -2,7 +2,7 @@
 Name='practica'
 Type='mamdani'
 Version=2.0
-NumInputs=8
+NumInputs=9
 NumOutputs=4
 NumRules=0
 AndMethod='min'
@@ -81,6 +81,16 @@ MF5='Completa':'trapmf',[1 1 1 1]
 
 [Input8]
 Name='Vida-restante-enemiga-ataque1'
+Range=[0 1]
+NumMFs=5
+MF1='Nula':'trapmf',[0 0 0 0]
+MF2='Baja':'trapmf',[0 0 0.275 0.475]
+MF3='Media':'trapmf',[0.275 0.45 0.55 0.725]
+MF4='Alta':'trapmf',[0.525 0.725 1 1]
+MF5='Completa':'trapmf',[1 1 1 1]
+
+[Input9]
+Name='Vida-actual-enemiga'
 Range=[0 1]
 NumMFs=5
 MF1='Nula':'trapmf',[0 0 0 0]
