@@ -2,7 +2,7 @@
 Name='practica'
 Type='mamdani'
 Version=2.0
-NumInputs=9
+NumInputs=11
 NumOutputs=4
 NumRules=0
 AndMethod='min'
@@ -22,7 +22,7 @@ MF4='Alta':'trapmf',[0.525 0.725 1 1]
 MF5='Completa':'trapmf',[1 1 1 1]
 
 [Input2]
-Name='Precisión'
+Name='Precisión-ataque1'
 Range=[0 1]
 NumMFs=3
 MF1='Baja':'trapmf',[0 0 0.5 0.7]
@@ -91,6 +91,24 @@ MF5='Completa':'trapmf',[1 1 1 1]
 
 [Input9]
 Name='Vida-actual-enemiga'
+Range=[0 1]
+NumMFs=5
+MF1='Nula':'trapmf',[0 0 0 0]
+MF2='Baja':'trapmf',[0 0 0.275 0.475]
+MF3='Media':'trapmf',[0.275 0.45 0.55 0.725]
+MF4='Alta':'trapmf',[0.525 0.725 1 1]
+MF5='Completa':'trapmf',[1 1 1 1]
+
+[Input10]
+Name='Precisión-ataque2'
+Range=[0 1]
+NumMFs=3
+MF1='Baja':'trapmf',[0 0 0.5 0.7]
+MF2='Media':'trapmf',[0.5 0.7 0.8 0.9]
+MF3='Alta':'trapmf',[0.8 0.9 1 1]
+
+[Input11]
+Name='Vida-actual-propia'
 Range=[0 1]
 NumMFs=5
 MF1='Nula':'trapmf',[0 0 0 0]
