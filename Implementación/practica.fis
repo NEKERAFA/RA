@@ -2,7 +2,7 @@
 Name='practica'
 Type='mamdani'
 Version=2.0
-NumInputs=4
+NumInputs=8
 NumOutputs=4
 NumRules=0
 AndMethod='min'
@@ -12,7 +12,7 @@ AggMethod='max'
 DefuzzMethod='centroid'
 
 [Input1]
-Name='Vida-restante(x5)'
+Name='Vida-restante-propia-curar'
 Range=[0 1]
 NumMFs=5
 MF1='Nula':'trapmf',[0 0 0 0]
@@ -49,6 +49,46 @@ MF3='Pocos':'trapmf',[2 2 3 4]
 MF4='Medio':'trapmf',[3 4 6 7]
 MF5='Muchos':'trapmf',[6 7 10 10]
 
+[Input5]
+Name='Vida-restante-propia-defender'
+Range=[0 1]
+NumMFs=5
+MF1='Nula':'trapmf',[0 0 0 0]
+MF2='Baja':'trapmf',[0 0 0.275 0.475]
+MF3='Media':'trapmf',[0.275 0.45 0.55 0.725]
+MF4='Alta':'trapmf',[0.525 0.725 1 1]
+MF5='Completa':'trapmf',[1 1 1 1]
+
+[Input6]
+Name='Vida-restante-propia-atacar'
+Range=[0 1]
+NumMFs=5
+MF1='Nula':'trapmf',[0 0 0 0]
+MF2='Baja':'trapmf',[0 0 0.275 0.475]
+MF3='Media':'trapmf',[0.275 0.45 0.55 0.725]
+MF4='Alta':'trapmf',[0.525 0.725 1 1]
+MF5='Completa':'trapmf',[1 1 1 1]
+
+[Input7]
+Name='Vida-restante-enemiga-ataque1'
+Range=[0 1]
+NumMFs=5
+MF1='Nula':'trapmf',[0 0 0 0]
+MF2='Baja':'trapmf',[0 0 0.275 0.475]
+MF3='Media':'trapmf',[0.275 0.45 0.55 0.725]
+MF4='Alta':'trapmf',[0.525 0.725 1 1]
+MF5='Completa':'trapmf',[1 1 1 1]
+
+[Input8]
+Name='Vida-restante-enemiga-ataque1'
+Range=[0 1]
+NumMFs=5
+MF1='Nula':'trapmf',[0 0 0 0]
+MF2='Baja':'trapmf',[0 0 0.275 0.475]
+MF3='Media':'trapmf',[0.275 0.45 0.55 0.725]
+MF4='Alta':'trapmf',[0.525 0.725 1 1]
+MF5='Completa':'trapmf',[1 1 1 1]
+
 [Output1]
 Name='Curarse'
 Range=[0 1]
@@ -62,25 +102,31 @@ MF5='Muy-alta':'trapmf',[0.8 0.9 1 1]
 [Output2]
 Name='Defenderse'
 Range=[0 1]
-NumMFs=3
-MF1='mf1':'trimf',[-0.4 0 0.4]
-MF2='mf2':'trimf',[0.1 0.5 0.9]
-MF3='mf3':'trimf',[0.6 1 1.4]
+NumMFs=5
+MF1='Muy-baja':'trapmf',[0 0 0.1 0.2]
+MF2='Baja':'trapmf',[0.1 0.2 0.3 0.4]
+MF3='Media':'trapmf',[0.3 0.4 0.6 0.7]
+MF4='Alta':'trapmf',[0.6 0.7 0.8 0.9]
+MF5='Muy-alta':'trapmf',[0.8 0.9 1 1]
 
 [Output3]
 Name='Ataque-1'
 Range=[0 1]
-NumMFs=3
-MF1='mf1':'trimf',[-0.4 0 0.4]
-MF2='mf2':'trimf',[0.1 0.5 0.9]
-MF3='mf3':'trimf',[0.6 1 1.4]
+NumMFs=5
+MF1='Muy-baja':'trapmf',[0 0 0.1 0.2]
+MF2='Baja':'trapmf',[0.1 0.2 0.3 0.4]
+MF3='Media':'trapmf',[0.3 0.4 0.6 0.7]
+MF4='Alta':'trapmf',[0.6 0.7 0.8 0.9]
+MF5='Muy-alta':'trapmf',[0.8 0.9 1 1]
 
 [Output4]
 Name='Ataque-2'
 Range=[0 1]
-NumMFs=3
-MF1='mf1':'trimf',[-0.4 0 0.4]
-MF2='mf2':'trimf',[0.1 0.5 0.9]
-MF3='mf3':'trimf',[0.6 1 1.4]
+NumMFs=5
+MF1='Muy-baja':'trapmf',[0 0 0.1 0.2]
+MF2='Baja':'trapmf',[0.1 0.2 0.3 0.4]
+MF3='Media':'trapmf',[0.3 0.4 0.6 0.7]
+MF4='Alta':'trapmf',[0.6 0.7 0.8 0.9]
+MF5='Muy-alta':'trapmf',[0.8 0.9 1 1]
 
 [Rules]
