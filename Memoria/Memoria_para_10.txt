@@ -1,0 +1,14 @@
+RA:
+- Mención a los fundamentos de los sistemas difusos:
+	1.- Introducción
+	2.- Introducción y objetivos
+	3.- Fundamentos
+	4.- Metodología
+		4.1.- Definición del problema
+		4.2.- Requisitos Funcionales y no funcionales
+		4.3.- Definición de las variables del sistema
+		4.4.- Representación gráfica de las variables de entrada y salida.
+	5.- Casos de uso
+	6.- Discusión
+	7.- Anexo
+	8.- Referencias.
