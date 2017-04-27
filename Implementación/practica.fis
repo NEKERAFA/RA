@@ -4,7 +4,7 @@ Type='mamdani'
 Version=2.0
 NumInputs=11
 NumOutputs=4
-NumRules=0
+NumRules=45
 AndMethod='min'
 OrMethod='max'
 ImpMethod='min'
@@ -12,7 +12,7 @@ AggMethod='max'
 DefuzzMethod='centroid'
 
 [Input1]
-Name='Vida-restante-propia-curar'
+Name='VRPC'
 Range=[0 1]
 NumMFs=5
 MF1='Nula':'trapmf',[0 0 0 0]
@@ -22,7 +22,7 @@ MF4='Alta':'trapmf',[0.525 0.725 1 1]
 MF5='Completa':'trapmf',[1 1 1 1]
 
 [Input2]
-Name='Precisión-ataque1'
+Name='PA1'
 Range=[0 1]
 NumMFs=3
 MF1='Baja':'trapmf',[0 0 0.5 0.7]
@@ -30,17 +30,7 @@ MF2='Media':'trapmf',[0.5 0.7 0.8 0.9]
 MF3='Alta':'trapmf',[0.8 0.9 1 1]
 
 [Input3]
-Name='Dif-energia-coste(anulada)'
-Range=[-1 1]
-NumMFs=5
-MF1='Inutilizable':'trapmf',[-1 -1 -1 -1]
-MF2='Bajo':'trapmf',[-1 -1 -0.45 -0.05]
-MF3='Media':'trapmf',[-0.45 -0.1 0.1 0.45]
-MF4='Alta':'trapmf',[0.05 0.45 1 1]
-MF5='Completo':'trapmf',[1 1 1 1]
-
-[Input4]
-Name='Objetos-restantes'
+Name='OR'
 Range=[0 10]
 NumMFs=5
 MF1='Ninguno':'trapmf',[0 0 0 0]
@@ -49,8 +39,18 @@ MF3='Pocos':'trapmf',[2 2 3 4]
 MF4='Medio':'trapmf',[3 4 6 7]
 MF5='Muchos':'trapmf',[6 7 10 10]
 
+[Input4]
+Name='VRPD'
+Range=[0 1]
+NumMFs=5
+MF1='Nula':'trapmf',[0 0 0 0]
+MF2='Baja':'trapmf',[0 0 0.275 0.475]
+MF3='Media':'trapmf',[0.275 0.45 0.55 0.725]
+MF4='Alta':'trapmf',[0.525 0.725 1 1]
+MF5='Completa':'trapmf',[1 1 1 1]
+
 [Input5]
-Name='Vida-restante-propia-defender'
+Name='VRPA'
 Range=[0 1]
 NumMFs=5
 MF1='Nula':'trapmf',[0 0 0 0]
@@ -60,7 +60,7 @@ MF4='Alta':'trapmf',[0.525 0.725 1 1]
 MF5='Completa':'trapmf',[1 1 1 1]
 
 [Input6]
-Name='Vida-restante-propia-atacar'
+Name='VREA1'
 Range=[0 1]
 NumMFs=5
 MF1='Nula':'trapmf',[0 0 0 0]
@@ -70,7 +70,7 @@ MF4='Alta':'trapmf',[0.525 0.725 1 1]
 MF5='Completa':'trapmf',[1 1 1 1]
 
 [Input7]
-Name='Vida-restante-enemiga-ataque1'
+Name='VREA2'
 Range=[0 1]
 NumMFs=5
 MF1='Nula':'trapmf',[0 0 0 0]
@@ -80,7 +80,7 @@ MF4='Alta':'trapmf',[0.525 0.725 1 1]
 MF5='Completa':'trapmf',[1 1 1 1]
 
 [Input8]
-Name='Vida-restante-enemiga-ataque1'
+Name='VAE'
 Range=[0 1]
 NumMFs=5
 MF1='Nula':'trapmf',[0 0 0 0]
@@ -90,25 +90,15 @@ MF4='Alta':'trapmf',[0.525 0.725 1 1]
 MF5='Completa':'trapmf',[1 1 1 1]
 
 [Input9]
-Name='Vida-actual-enemiga'
-Range=[0 1]
-NumMFs=5
-MF1='Nula':'trapmf',[0 0 0 0]
-MF2='Baja':'trapmf',[0 0 0.275 0.475]
-MF3='Media':'trapmf',[0.275 0.45 0.55 0.725]
-MF4='Alta':'trapmf',[0.525 0.725 1 1]
-MF5='Completa':'trapmf',[1 1 1 1]
-
-[Input10]
-Name='Precisión-ataque2'
+Name='PA2'
 Range=[0 1]
 NumMFs=3
 MF1='Baja':'trapmf',[0 0 0.5 0.7]
 MF2='Media':'trapmf',[0.5 0.7 0.8 0.9]
 MF3='Alta':'trapmf',[0.8 0.9 1 1]
 
-[Input11]
-Name='Vida-actual-propia'
+[Input10]
+Name='VAP'
 Range=[0 1]
 NumMFs=5
 MF1='Nula':'trapmf',[0 0 0 0]
@@ -116,6 +106,14 @@ MF2='Baja':'trapmf',[0 0 0.275 0.475]
 MF3='Media':'trapmf',[0.275 0.45 0.55 0.725]
 MF4='Alta':'trapmf',[0.525 0.725 1 1]
 MF5='Completa':'trapmf',[1 1 1 1]
+
+[Input11]
+Name='DAÑO'
+Range=[0 1]
+NumMFs=3
+MF1='Bajo':'trapmf',[0 0 0.1 0.2]
+MF2='Medio':'trapmf',[0.1 0.2 0.3 0.5]
+MF3='Alto':'trapmf',[0.3 0.5 1 1]
 
 [Output1]
 Name='Curarse'
@@ -158,3 +156,48 @@ MF4='Alta':'trapmf',[0.6 0.7 0.8 0.9]
 MF5='Muy-alta':'trapmf',[0.8 0.9 1 1]
 
 [Rules]
+0 3 0 0 -1 1 0 0 0 0 0, 0 1 5 0 (1) : 1
+0 3 0 0 1 1 0 0 0 0 0, 0 2 4 0 (1) : 1
+0 2 0 0 -1 1 0 0 0 0 0, 0 2 4 0 (1) : 1
+0 2 0 1 1 1 0 0 0 0 0, 0 1 4 0 (1) : 1
+0 2 0 -1 1 1 0 0 0 0 0, 0 2 4 0 (1) : 1
+0 1 0 -1 3 1 0 0 0 0 0, 0 1 3 0 (1) : 1
+0 1 0 -1 4 1 0 0 0 0 0, 0 1 3 0 (1) : 1
+0 1 0 -1 5 1 0 0 0 0 0, 0 1 3 0 (1) : 1
+0 1 0 0 2 1 0 0 0 0 0, 0 2 2 0 (1) : 1
+0 1 0 1 1 1 0 0 0 0 0, 0 1 2 0 (1) : 1
+0 1 0 -1 1 1 0 0 0 0 0, 0 3 1 0 (1) : 1
+0 3 0 0 5 0 0 0 0 0 2, 0 0 5 0 (1) : 1
+0 3 0 0 5 0 0 0 0 0 3, 0 0 5 0 (1) : 1
+0 2 0 0 5 0 0 0 0 0 2, 0 0 5 0 (1) : 1
+0 2 0 0 5 0 0 0 0 0 3, 0 0 5 0 (1) : 1
+0 3 0 0 4 0 0 0 0 0 2, 0 0 5 0 (1) : 1
+0 3 0 0 4 0 0 0 0 0 3, 0 0 5 0 (1) : 1
+0 2 0 0 4 0 0 0 0 0 2, 0 0 5 0 (1) : 1
+0 2 0 0 4 0 0 0 0 0 3, 0 0 5 0 (1) : 1
+0 3 0 0 5 0 0 0 0 0 1, 0 0 4 0 (1) : 1
+0 3 0 0 4 0 0 0 0 0 1, 0 0 4 0 (1) : 1
+0 2 0 0 4 0 0 0 0 0 1, 0 0 4 0 (1) : 1
+0 2 0 0 5 0 0 0 0 0 1, 0 0 4 0 (1) : 1
+0 1 0 0 5 0 0 0 0 0 3, 0 0 3 0 (1) : 1
+0 1 0 0 4 0 0 0 0 0 3, 0 0 3 0 (1) : 1
+0 1 0 0 5 0 0 0 0 0 2, 0 0 2 0 (1) : 1
+0 1 0 0 4 0 0 0 0 0 2, 0 0 2 0 (1) : 1
+0 1 0 0 5 0 0 0 0 0 1, 0 0 1 0 (1) : 1
+0 1 0 0 4 0 0 0 0 0 1, 0 0 1 0 (1) : 1
+0 3 0 0 3 0 0 0 0 0 3, 0 0 5 0 (1) : 1
+0 3 0 0 3 0 0 0 0 0 2, 0 0 4 0 (1) : 1
+0 3 0 0 3 0 0 0 0 0 1, 0 0 3 0 (1) : 1
+0 2 0 0 3 0 0 0 0 0 3, 0 0 4 0 (1) : 1
+0 2 0 0 3 0 0 0 0 0 2, 0 0 3 0 (1) : 1
+0 2 0 0 3 0 0 0 0 0 1, 0 0 2 0 (1) : 1
+0 1 0 0 3 0 0 0 0 0 3, 0 0 2 0 (1) : 1
+0 1 0 0 3 0 0 0 0 0 2, 0 0 1 0 (1) : 1
+0 1 0 0 3 0 0 0 0 0 1, 0 0 1 0 (1) : 1
+0 3 0 0 2 0 0 0 0 0 3, 0 0 5 0 (1) : 1
+0 3 0 0 2 0 0 0 0 0 2, 0 0 3 0 (1) : 1
+0 3 0 0 2 0 0 0 0 0 1, 0 0 2 0 (1) : 1
+0 2 0 0 2 0 0 0 0 0 3, 0 0 3 0 (1) : 1
+0 2 0 0 2 0 0 0 0 0 2, 0 0 2 0 (1) : 1
+0 2 0 0 2 0 0 0 0 0 1, 0 0 1 0 (1) : 1
+0 1 0 0 2 0 0 0 0 0 0, 0 0 1 0 (1) : 1
