@@ -1,0 +1,10 @@
+Vida-restante-propia-curar -> vrpc
+Precisión-ataque1 -> PA1
+Objetos-restantes -> OR
+Vida-restante-propia-defender -> VRPD
+Vida-restante-propia-atacar -> VRPA
+Vida-restante-enemiga-ataque1 -> VREA1
+Vida-restante-enemiga-ataque2 -> VREA2
+Vida-actual-enemiga -> VAE
+Precisión-ataque2 -> PA2
+Vida-actual-propia -> VAP
