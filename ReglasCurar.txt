@@ -1,0 +1,25 @@
+Si Objetos = Ninguno -> Curarse = Nada
+Si Vida restante propia curarse = Nula -> Curarse = Mala
+
+Si Vida restante propia ataque
+		= Nula y
+				Vida restante propia curarse 
+					!= Nula -> Curarse = Muy buena
+		= Muy baja y 
+				Objetos 
+					= Último -> Curarse = Buena
+					= Pocos o Medios o Muchos -> Curarse = Muy buena
+		= Baja y
+				Objetos
+					= Último -> Curarse = Media
+					= Pocos o Medios o Muchos -> Curarse = Buena
+		= Media y
+				Objetos
+					= Último -> Curarse = Mala
+					= Pocos o Medios o Muchos -> Curarse = Media
+		= Alta y
+				Objetos
+					= Último -> Curarse = Muy mala
+					= Pocos o Medios o Muchos -> Curarse = Mala
+		= Muy-alta o Completa -> Curarse = Muy mala
+
