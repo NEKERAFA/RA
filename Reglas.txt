@@ -1,0 +1,45 @@
+Reglas curación
+
+vida restante (curación)
+    -nula*
+    -baja
+    -media
+    -alta
+    -completa
+vida restante (no curación)
+    -nula*
+    -baja*
+    -media*
+    -alta*
+    -completa*
+vida actual propia
+    -nula*
+    -baja*
+    -media*
+    -alta*
+    -completa*
+
+NADA/MUY BAJA (quizás nada en algunos casos es muy basto porque son estimaciones que pueden fallar)
+vida actual propia = nula OR vida actual ene = nula OR objetos = ninguno -> curarse = nada
+vida restante propia (curación) = nula -> curarse = nada/muy bajo
+vida restante propia (no curación) = alta OR vida restante propia (no curación) = completa -> curarse = muy baja
+vida actual propia = alta AND vida restante propia (nocur) = media AND objetos = ultimo -> curarse = muy baja
+vida actual propia = media AND vida restante (nocur) = media AND objetos = ultimo/pocos -> curarse = muy baja
+
+BAJA
+vida actual propia = completa/alta AND vida restante propia (no curación) = media AND objetos = ultimo/pocos -> curarse = baja/media
+vida actual propia = media AND vida restante (nocur) = media AND objetos = ultimo/pocos -> curarse = baja
+
+MEDIA
+vida actual propia = completa/alta AND vida restante propia (no curación) = baja -> curarse = media/alta
+vida actual propia = completa/alta AND vida restante propia (no curación) = media -> curarse = media
+vida actual propia = baja AND vida restante (nocur) = baja AND objetos = ultimo/pocos -> curarse = media
+vida actual propia = media AND vida restante (nocur) = media AND objetos = medio/muchos -> curarse = media
+vida actual propia = media AND vida restante (nocur) = baja AND objetos = ultimo/pocos -> curarse = media
+
+ALTA
+vida actual propia = media AND vida restante (nocur) = baja AND objetos = medio/muchos -> curarse = alta
+vida actual propia = baja AND vida restante (nocur) = baja -> curarse = alta
+
+MUY ALTA/SEGURA
+vida restante propia (no curación) = nula AND vida restante propia (curación) != nula -> curarse = muy alta/segura
