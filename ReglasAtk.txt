@@ -1,75 +1,30 @@
-Vida actual propia
-    -completa
-    -alta
-    -media
-    -baja
-    -nula
-Vida actual enemigo
-    -completa
-    -alta
-    -media
-    -baja
-    -nula
-Vida restante propia
-    -completa
-    -alta
-    -media
-    -baja
-    -nula
-Vida restante enemiga
-    -completa
-    -alta
-    -media
-    -baja
-    -nula
-Precisión
-    -alta
-    -media
-    -baja
-    -nula?
+1.- vida restante enemigo = nula AND prec = alta AND vida restante propia != nula -> atk = muy alta AND defensa = nula/muy baja
+2.- vida restante enemigo = nula AND prec = alta AND vida restante propia = nula -> atk = alta AND defensa = muy baja
+3.- vida restante enemigo = nula AND prec = media AND vida restante propia != nula -> atk = alta AND defensa = nula/muy baja
+4.- vida restante enemigo = nula AND prec = media AND vida restante propia = nula AND vida restante defensa = nula -> atk = media AND defensa = nula/muy baja
+5.- vida restante enemigo = nula AND prec = media AND vida restante propia = nula AND vida restante defensa != nula -> atk = media AND defensa = baja
+6, 7, 8.- vida restante enemigo = nula AND prec = baja AND vida restante propia >= media -> atk = media AND defensa = muy baja
+9.- vida restante enemigo = nula AND prec = baja AND vida restante propia = baja -> atk = baja AND defensa = baja
+10.- vida restante enemigo = nula AND prec = baja AND vida restante propia = nula AND vida restante defenderse = nula -> atk = muy baja AND defensa = nula/muy baja
+11.- vida restante enemigo = nula AND prec = baja AND vida restante propia = nula AND vida restante defenderse != nula -> atk = muy baja AND defensa = media
 
-NADA
-vida actual propia = nula OR vida actual ene = nula OR prec = nula -> atk = nada
-
-MUY BAJA
-prec = baja AND prec2 > baja AND daño? > nulo -> atk = muy baja
-vida restante propia = nula (AND vida restante ene != nula (necesario? supongo que comtemplaría el caso de fallar el atk)) -> atk = muy baja
-
-BAJA
-
-MEDIA
-
-ALTA
-
-MUY ALTA
-
-vida restante enemigo = nula AND prec = alta AND vida restante propia != nula -> atk = muy alta AND defensa = nula/muy baja
-vida restante enemigo = nula AND prec = alta AND vida restante propia = nula -> atk = alta AND defensa = muy baja
-vida restante enemigo = nula AND prec = media AND vida restante propia != nula -> atk = alta AND defensa = nula/muy baja
-vida restante enemigo = nula AND prec = media AND vida restante propia = nula AND vida restante defensa = nula -> atk = media AND defensa = nula/muy baja
-vida restante enemigo = nula AND prec = media AND vida restante propia = nula AND vida restante defensa != nula -> atk = media AND defensa = baja
-vida restante enemigo = nula AND prec = baja AND vida restante propia >= media -> atk = media AND defensa = muy baja
-vida restante enemigo = nula AND prec = baja AND vida restante propia = baja -> atk = baja AND defensa = baja
-vida restante enemigo = nula AND prec = baja AND vida restante propia = nula AND vida restante defenderse = nula -> atk = muy baja AND defensa = nula/muy baja
-vida restante enemigo = nula AND prec = baja AND vida restante propia = nula AND vida restante defenderse != nula -> atk = muy baja AND defensa = media
-
-vida restante propia = completa/alta AND prec = alta/media AND daño > bajo -> atk = muy alta
-vida restante propia = completa/alta AND prec = alta/media AND daño = bajo? -> atk = alta
-vida restante propia = completa/alta AND prec = baja AND daño = alto -> atk = media
-vida restante propia = completa/alta AND prec = baja AND daño = medio -> atk = baja
-vida restante propia = completa/alta AND prec = baja AND daño = bajo -> atk = muy baja
-vida restante propia = media AND prec = alta AND daño = alto -> atk = muy alta
-vida restante propia = media AND prec = alta AND daño = medio -> atk = alta
-vida restante propia = media AND prec = alta AND daño = bajo -> atk = media
-vida restante propia = media AND prec = media AND daño = alto -> atk = alta
-vida restante propia = media AND prec = media AND daño = medio -> atk = media
-vida restante propia = media AND prec = media AND daño = bajo -> atk = baja
-vida restante propia = media AND prec = baja AND daño = alto -> atk = baja
-vida restante propia = media AND prec = baja AND daño = medio/bajo -> atk = muy baja
-vida restante propia = baja AND prec = alta AND daño = alto -> atk = alta
-vida restante propia = baja AND prec = alta AND daño = medio -> atk = media
-vida restante propia = baja AND prec = alta AND daño = bajo -> atk = baja
-vida restante propia = baja AND prec = media AND daño = alto -> atk = media
-vida restante propia = baja AND prec = media AND daño = medio -> atk = baja
-vida restante propia = baja AND prec = media AND daño = bajo -> atk = muy baja
-vida restante propia = baja AND prec = baja -> atk = muy baja
+12, 13, 14, 15, 16, 17, 18, 19.- vida restante propia = completa/alta AND prec = alta/media AND daño > bajo -> atk = muy alta
+20, 21, 22, 23.- vida restante propia = completa/alta AND prec = alta/media AND daño = bajo -> atk = alta
+24, 25.- vida restante propia = completa/alta AND prec = baja AND daño = alto -> atk = media
+26, 27.- vida restante propia = completa/alta AND prec = baja AND daño = medio -> atk = baja
+28, 29.- vida restante propia = completa/alta AND prec = baja AND daño = bajo -> atk = muy baja
+30.- vida restante propia = media AND prec = alta AND daño = alto -> atk = muy alta
+31.- vida restante propia = media AND prec = alta AND daño = medio -> atk = alta
+32.- vida restante propia = media AND prec = alta AND daño = bajo -> atk = media
+33.- vida restante propia = media AND prec = media AND daño = alto -> atk = alta
+34.- vida restante propia = media AND prec = media AND daño = medio -> atk = media
+35.- vida restante propia = media AND prec = media AND daño = bajo -> atk = baja
+36.- vida restante propia = media AND prec = baja AND daño = alto -> atk = baja
+37, 38.- vida restante propia = media AND prec = baja AND daño = medio/bajo -> atk = muy baja
+39.- vida restante propia = baja AND prec = alta AND daño = alto -> atk = alta
+40.- vida restante propia = baja AND prec = alta AND daño = medio -> atk = media
+41.- vida restante propia = baja AND prec = alta AND daño = bajo -> atk = baja
+42.- vida restante propia = baja AND prec = media AND daño = alto -> atk = media
+43.- vida restante propia = baja AND prec = media AND daño = medio -> atk = baja
+44.- vida restante propia = baja AND prec = media AND daño = bajo -> atk = muy baja
+45.- vida restante propia = baja AND prec = baja -> atk = muy baja
