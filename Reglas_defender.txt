@@ -1,0 +1,20 @@
+IF vida_restante_propia_atacar IS Nula
+AND vida_restante_defenderse IS NOT Nula
+THEN defenderse = Muy-alta
+
+IF vida_restante_propia_atacar IS Baja
+AND vida_actual_enemiga IS Baja
+THEN defenderse = Alta
+
+IF vida_restante_propia_atacar IS Media
+AND vida_actual_enemiga IS Media
+THEN defenderse = Media
+
+IF vida_restante_propia_atacar IS Media
+OR vida_restante_propia_atacar IS Alta
+OR vida_restante_propia_atacar IS Completa
+THEN defenderse = Muy-baja
+
+IF vida_actual_propia IS Baja
+AND vida_restante_propia_atacar IS Nula
+THEN defenderse = Muy-Alta

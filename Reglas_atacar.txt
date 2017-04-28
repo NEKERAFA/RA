@@ -1,0 +1,66 @@
+Reglas Ataque:
+
+%Muere si ataca
+IF vida_restante_propia_atacar IS Nula
+THEN ataque-1 = Muy-baja AND ataque-2 = Muy-baja
+
+%Matamos al enemigo
+IF (vida_restante_propia_atacar IS Media
+OR vida_restante_propia_atacar IS Alta
+OR vida_restante_propia_atacar IS Completa)
+AND vida_restante_enemiga_ataque_1 IS Nula
+THEN ataque-1 = Muy-ata
+
+%Matamos al enemigo
+IF (vida_restante_propia_atacar IS Media
+OR vida_restante_propia_atacar IS Alta
+OR vida_restante_propia_atacar IS Completa)
+AND vida_restante_enemiga_ataque_2 IS Nula
+THEN ataque-1 = Muy-ata
+
+%Matamos al enemigo
+IF (vida_restante_enemigo_ataque_1 IS Nula)
+AND precision_ataque_1 is Alta
+THEN ataque-1 = Muy-ata
+
+%Matamos al enemigo
+IF (vida_restante_enemigo_ataque_2 IS Nula)
+AND precision_ataque_2 is Alta
+THEN ataque-2 = Muy-ata
+
+%Matamos al enemigo
+IF (vida_restante_enemigo_ataque_1 IS Nula)
+AND precision_ataque_1 is Media
+AND (vida_actual_propia IS Media OR vida_actual_propia_is_baja)
+THEN ataque-1 = Alta
+
+%Matamos al enemigo
+IF (vida_restante_enemigo_ataque_2 IS Nula)
+AND precision_ataque_2 is Media
+AND (vida_restante_ataque IS NOT Nula)
+THEN ataque-2 = Alta
+
+%Matamos al enemigo
+IF (vida_restante_enemigo_ataque_1 IS Nula)
+AND precision_ataque_1 is Baja
+AND (vida_actual_propia IS Media OR vida_actual_propia_is_baja)
+THEN ataque-1 = Media
+
+%Matamos al enemigo
+IF (vida_restante_enemigo_ataque_1 IS Nula)
+AND precision_ataque_2 is Baja
+AND (vida_actual_propia IS Media OR vida_actual_propia_is_baja)
+THEN ataque-2 = Media
+
+
+IF (vida_actual_propia IS Baja
+OR vida_restante_propia_atacar IS Nula)
+AND vida_restante_enemigo_ataque_1 IS Nula
+AND precision_ataque_1 IS Alta
+THEN ataque-1 = Muy-Alta
+
+IF (vida_actual_propia IS Baja
+OR vida_restante_propia_atacar IS Nula)
+AND vida_restante_enemigo_ataque_2 IS Nula
+AND precision_ataque_2 IS Alta
+THEN ataque-2 = Muy-Alta
