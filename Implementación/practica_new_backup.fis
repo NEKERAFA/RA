@@ -1,10 +1,10 @@
 [System]
-Name='practica'
+Name='practica_new_backup'
 Type='mamdani'
 Version=2.0
 NumInputs=8
 NumOutputs=3
-NumRules=51
+NumRules=47
 AndMethod='min'
 OrMethod='max'
 ImpMethod='min'
@@ -162,7 +162,3 @@ MF5='Muy-alta':'trapmf',[0.8 0.9 1 1]
 -1 0 4 0 3 0 0 0, 2 0 0 (1) : 1
 -1 0 5 0 3 0 0 0, 2 0 0 (1) : 1
 -1 0 -1 0 4 0 0 0, 1 0 0 (1) : 1
-0 0 0 -1 1 0 0 0, 0 5 0 (1) : 1
-0 0 0 0 4 0 0 0, 0 1 0 (1) : 1
-0 0 0 0 3 0 4 0, 0 2 0 (1) : 1
-0 0 0 0 3 0 3 0, 0 1 0 (1) : 1
