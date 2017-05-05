@@ -1,20 +1,47 @@
-IF vida_restante_propia_atacar IS Nula
+48.- IF vida_restante_defenderse IS Nula
+THEN defenderse = Muy-baja
+
+49.- IF vida_restante_propia_atacar IS Nula
+AND vida_restante_propia_curar IS Nula
 AND vida_restante_defenderse IS NOT Nula
 THEN defenderse = Muy-alta
 
-IF vida_restante_propia_atacar IS Baja
-AND vida_actual_enemiga IS Baja
-THEN defenderse = Alta
+50.- IF vida_restante_propia_atacar IS Nula
+AND vida_restante_propia_curar IS Baja
+AND vida_restante_defenderse IS Baja
+THEN defenderse = Muy-alta
+	AND curarse = Baja
 
-IF vida_restante_propia_atacar IS Media
-AND vida_actual_enemiga IS Media
+51.- IF vida_restante_propia_atacar IS Nula
+AND vida_restante_propia_curar IS Media
+AND vida_restante_defenderse IS Media
+THEN defenderse = Muy-alta
+	AND curarse = Baja
+
+52.- IF vida_restante_propia_atacar IS Nula
+AND vida_restante_propia_curar IS Alta
+AND vida_restante_defenderse IS Alta
+THEN defenderse = Muy-alta
+	AND curarse = Baja
+
+53.- IF vida_restante_propia_atacar IS Nula
+AND vida_restante_propia_curar IS Media
+AND vida_restante_defenderse IS Baja
 THEN defenderse = Media
 
-IF vida_restante_propia_atacar IS Media
-OR vida_restante_propia_atacar IS Alta
-OR vida_restante_propia_atacar IS Completa
+54.- IF vida_restante_propia_atacar IS Nula
+AND vida_restante_propia_curar IS Alta
+AND vida_restante_defenderse IS Media
+THEN defenderse = Media
+
+55.- IF vida_restante_propia_atacar IS Nula
+AND vida_restante_propia_curar IS Alta
+AND vida_restante_defenderse IS Baja
+THEN defenderse = Baja
+
+56.- IF vida_restante_propia_atacar IS Media
+57.- OR vida_restante_propia_atacar IS Alta
 THEN defenderse = Muy-baja
 
-IF vida_actual_propia IS Baja
-AND vida_restante_propia_atacar IS Nula
-THEN defenderse = Muy-Alta
+58.- IF vida_restante_propia_atacar IS Baja
+THEN defenderse = Baja
