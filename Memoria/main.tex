@@ -33,16 +33,20 @@
 \usepackage{subcaption}
 \usepackage{neuralnetwork}
 \usepackage{titlesec}
-
+\usepackage{booktabs}
+\usepackage[font=scriptsize,labelfont=bf]{caption}
+\usepackage[font=scriptsize,labelfont=bf]{subcaption}
+\newcommand{\tableref}[1]{\textit{tabla \ref{#1}}}
+\newcommand{\figureref}[1]{\textit{figura \ref{#1}}}
 
 
 % ------------- Style ---------------
 
 \hypersetup{
 	colorlinks   = true,	% Colours links instead of ugly boxes
-	urlcolor     = blue,	% Colour for external hyperlinks
+	urlcolor     = black,	% Colour for external hyperlinks
 	linkcolor    = black,	% Colour of internal links
-	citecolor   = blue		% Colour of citations
+	citecolor   = black		% Colour of citations
 }
 
 \marginsize{2.25cm}{2.25cm}{2cm}{2cm}
@@ -103,16 +107,20 @@
 	\pagestyle{plain} %{plain}
 	
 	\hypersetup{
-		linkcolor = blue, % Colour of internal links
+		linkcolor = black, % Colour of internal links
 	}
 
 
 
 	% ------- Content -------
-	\input{anteproyecto}
-	\input{planteamiento}
-	\input{desarrollo}
-	\input{implementación}
+	\input{introducción}
+	\input{introducción_y_objetivos}
+	\input{fundamentos}
+	\input{metodología}
+	\input{casos_de_uso}
+	\input{discusión}
+	\input{anexo}
+	\input{referencias}
 	
 	
 \end{document}
