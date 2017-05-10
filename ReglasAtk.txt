@@ -28,3 +28,5 @@
 43.- vida restante propia = baja AND prec = media AND daño = medio -> atk = baja
 44.- vida restante propia = baja AND prec = media AND daño = bajo -> atk = muy baja
 45.- vida restante propia = baja AND prec = baja -> atk = muy baja
+
+59.- vida restante propia = nula AND vida restante enemigo != nula -> atk = muy baja
