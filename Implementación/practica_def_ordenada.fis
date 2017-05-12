@@ -4,7 +4,7 @@ Type='mamdani'
 Version=2.0
 NumInputs=7
 NumOutputs=3
-NumRules=63
+NumRules=64
 AndMethod='min'
 OrMethod='max'
 ImpMethod='min'
@@ -21,7 +21,7 @@ MF3='Media':'trapmf',[0.275 0.45 0.55 0.725]
 MF4='Alta':'trapmf',[0.525 0.725 1 1]
 
 [Input2]
-Name='PA1'
+Name='PA'
 Range=[0 1]
 NumMFs=3
 MF1='Baja':'trapmf',[0 0 0.5 0.7]
@@ -57,7 +57,7 @@ MF3='Media':'trapmf',[0.275 0.45 0.55 0.725]
 MF4='Alta':'trapmf',[0.525 0.725 1 1]
 
 [Input6]
-Name='VREA1'
+Name='VREA'
 Range=[0 1]
 NumMFs=4
 MF1='Nula':'trapmf',[0 0 0 0]
@@ -75,7 +75,7 @@ MF3='Alto':'trapmf',[0.3 0.5 1 1]
 MF4='Nulo':'trapmf',[0 0 0 0]
 
 [Output1]
-Name='Curarse'
+Name='Curación'
 Range=[0 1]
 NumMFs=6
 MF1='Muy-baja':'trapmf',[0 0 0.1 0.2]
@@ -86,7 +86,7 @@ MF5='Muy-alta':'trapmf',[0.8 0.9 1 1]
 MF6='Nada':'trapmf',[0 0 0 0]
 
 [Output2]
-Name='Defenderse'
+Name='Defensa'
 Range=[0 1]
 NumMFs=5
 MF1='Muy-baja':'trapmf',[0 0 0.1 0.2]
@@ -96,7 +96,7 @@ MF4='Alta':'trapmf',[0.6 0.7 0.8 0.9]
 MF5='Muy-alta':'trapmf',[0.8 0.9 1 1]
 
 [Output3]
-Name='Ataque-1'
+Name='Ataque'
 Range=[0 1]
 NumMFs=5
 MF1='Muy-baja':'trapmf',[0 0 0.1 0.2]
@@ -107,7 +107,7 @@ MF5='Muy-alta':'trapmf',[0.8 0.9 1 1]
 
 [Rules]
 0 3 0 0 -1 1 0, 0 1 5 (1) : 1
-0 3 0 0 1 1 0, 0 1 4 (1) : 1
+0 3 -1 0 1 1 0, 2 1 4 (1) : 1
 0 2 0 0 -1 1 0, 0 2 4 (1) : 1
 0 2 0 1 1 1 0, 0 1 4 (1) : 1
 0 2 0 -1 1 1 0, 0 2 4 (1) : 1
@@ -169,4 +169,4 @@ MF5='Muy-alta':'trapmf',[0.8 0.9 1 1]
 0 0 0 0 3 0 0, 0 1 0 (1) : 1
 0 0 0 0 4 0 0, 0 1 0 (1) : 1
 0 0 0 0 2 0 0, 0 2 0 (1) : 1
-
+0 3 1 0 1 1 0, 6 1 4 (1) : 1
