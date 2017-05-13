@@ -1,7 +1,7 @@
-48.- IF vida_restante_defenderse IS Nula
+48.- IF vida_restante_defenderse IS Nula (cubierta?)
 THEN defenderse = Muy-baja
 
-49.- IF vida_restante_propia_atacar IS Nula
+49.- IF vida_restante_propia_atacar IS Nula (cubierta?)
 AND vida_restante_propia_curar IS Nula
 AND vida_restante_defenderse IS NOT Nula
 THEN defenderse = Muy-alta
@@ -60,4 +60,4 @@ THEN defenderse = Muy_alta
 AND curarse = baja
 
 
-** Si los objetos restantes son nulos, la vida después de curarse es nula o igual a la vida después de curarse
+** Si los objetos restantes son nulos, la vida después de curarse es nula o igual a la vida después de atacar

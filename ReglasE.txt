@@ -1,0 +1,160 @@
+Cuestión a debatir: ** Si los objetos restantes son nulos, la vida después de curarse es nula o igual a la vida después de atacar
+Dado este supuesto, nos aporta algo conservar la variable OR? Podemos trabajar obviándola al asumir una de estas dos cosas?
+Podemos omitir el hecho de que hay objetos?
+Probablemente nos simplificaría el trabajo. Inconvenientes
+
+a) Si asumimos vida cur = nula cuando no tenemos objetos -> No podemos diferenciar el no tener objetos del tener una estimación
+   muy desfavorable para curarnos en la que moriríamos igualmente (pero que no deja de ser una estimación, en principio), por lo que
+   cada vez que apareciera vida cur = nula automáticamente habría que descartar la opción de curarse.
+b) Si asumimos vida cur = vida atk cuando no tenemos objetos -> No podemos diferenciar cuándo no tenemos objetos y cuándo la estimación
+   nos dice que nos quedaríamos igual que al atacar (algo bastante raro si me preguntáis, pero posible si cada valor está en un extremo
+   del conjunto difuso), por lo que tendríamos que asumir, simplemente, que curar no consume ningún recurso externo al sistema o descartar
+   la opción de curarse si se da este caso.
+
+Personalmente, eliminar OR y pensar que no se consumen objetos me parece sencillo, pero no sé si perdemos algo chachi del trabajo por ello.
+Otra opción sería añadir un valor artificial a vida cur (rollo -1) que nos indicara cuándo no puede hacerse la curación. No sé cuánto nos
+complicaría esto las reglas.
+
+Las reglas a continuación están hechas sin contar con la variable OR
+
+------
+Reglas de momentos críticos (vida restante propia/enemigo = nula)
+Criterios:
+-Prevalencia del ataque si hay seguridad de acertar
+-Disminución de la prioridad si fallando podemos morir
+-Entendemos que la prioridad entre curarse y defenderse se ajusta con el resto de reglas
+-Sólo hay necesidad de mirar la viabilidad de curarse/defenderse cuando la vida restante al atacar es nula, ya que
+la vida restante al curarse/defenderse nunca va a ser menor que la vida restante al atacar
+
+1.- vida restante enemigo = nula AND prec = alta AND vida restante propia != nula -> atk = muy alta AND defensa = nula/muy baja AND curarse = muy/baja
+
+Vigilamos si es viable en cierto modo curarse/defenderse, pero dejamos al criterio de otras reglas decir cuál es más apropiada
+*2.- vida restante enemigo = nula AND prec = alta AND vida restante propia = nula AND vida def != nula AND vida cur != nula -> atk = alta AND defensa = muy baja/baja AND curarse = muy baja/baja
+*2.- vida restante enemigo = nula AND prec = alta AND vida restante propia = nula AND vida def = nula AND vida cur != nula -> atk = alta AND defensa = nada/muy baja AND curarse = muy baja/baja
+*2.- vida restante enemigo = nula AND prec = alta AND vida restante propia = nula AND vida def != nula AND vida cur = nula -> atk = alta AND defensa = muy baja/baja AND curarse = nada/muy baja
+*2.- vida restante enemigo = nula AND prec = alta AND vida restante propia = nula AND vida def = nula AND vida cur = nula -> atk = alta AND defensa = nada/muy baja AND curarse = nada/muy baja
+
+3.- vida restante enemigo = nula AND prec = media AND vida restante propia != nula -> atk = alta AND defensa = nula/muy baja AND curarse = muy baja/nula
+
+Mismo razonamiento que en el otro grupo de reglas
+*4.- vida restante enemigo = nula AND prec = media AND vida restante propia = nula AND vida restante defensa = nula AND vida cur = nula -> atk = media AND defensa = nula/muy baja AND curarse = nula/muy baja
+*4.- vida restante enemigo = nula AND prec = media AND vida restante propia = nula AND vida restante defensa = nula AND vida cur != nula -> atk = media AND defensa = nula/muy baja AND curarse = baja
+*5.- vida restante enemigo = nula AND prec = media AND vida restante propia = nula AND vida restante defensa != nula AND vida cur = nula -> atk = media AND defensa = baja AND curarse = nula/muy baja
+*5.- vida restante enemigo = nula AND prec = media AND vida restante propia = nula AND vida restante defensa != nula AND vida cur != nula -> atk = media AND defensa = baja AND curarse = baja
+
+6, 7, 8.- vida restante enemigo = nula AND prec = baja AND vida restante propia >= media -> atk = media AND defensa = muy baja/nula AND curarse = muy baja/nula
+
+Podría quizás en algún caso ser viable establecer una prioridad débil curarse > defenderse susceptible de ser modificada por
+otras reglas, pero también es posible que sea mejor no hacerlo
+9.- vida restante enemigo = nula AND prec = baja AND vida restante propia = baja -> atk = baja AND defensa = baja AND curarse = baja/media
+
+Mismo criterio explicado anteriormente. Puede que aquí no fuera malo darles algo más de prioridad a def/cur
+*10.- vida restante enemigo = nula AND prec = baja AND vida restante propia = nula AND vida restante defenderse = nula AND vida cur = nula -> atk = muy baja AND defensa = nula/muy baja AND curarse = nula/muy baja (podría subirse un poco pensando como en las reglas 59)
+*11.- vida restante enemigo = nula AND prec = baja AND vida restante propia = nula AND vida restante defenderse != nula AND vida cur = nula -> atk = muy baja AND defensa = media/alta AND curarse = nula/muy baja
+*11.- vida restante enemigo = nula AND prec = baja AND vida restante propia = nula AND vida restante defenderse = nula AND vida cur != nula -> atk = muy baja AND defensa = nula/muy baja AND curarse = media/alta
+*11.- vida restante enemigo = nula AND prec = baja AND vida restante propia = nula AND vida restante defenderse != nula AND vida cur != nula -> atk = muy baja AND defensa = media/alta AND curarse = media/alta
+------
+Reglas para prioridad de ataque en situaciones no críticas (vida propia y enemiga != nula)
+
+12, 13, 14, 15, 16, 17, 18, 19.- vida restante propia = completa/alta AND prec = alta/media AND daño > bajo -> atk = muy alta
+20, 21, 22, 23.- vida restante propia = completa/alta AND prec = alta/media AND daño = bajo -> atk = alta
+24, 25.- vida restante propia = completa/alta AND prec = baja AND daño = alto -> atk = media
+26, 27.- vida restante propia = completa/alta AND prec = baja AND daño = medio -> atk = baja
+28, 29.- vida restante propia = completa/alta AND prec = baja AND daño = bajo -> atk = muy baja
+30.- vida restante propia = media AND prec = alta AND daño = alto -> atk = muy alta
+31.- vida restante propia = media AND prec = alta AND daño = medio -> atk = alta
+32.- vida restante propia = media AND prec = alta AND daño = bajo -> atk = media
+33.- vida restante propia = media AND prec = media AND daño = alto -> atk = alta
+34.- vida restante propia = media AND prec = media AND daño = medio -> atk = media
+35.- vida restante propia = media AND prec = media AND daño = bajo -> atk = baja
+36.- vida restante propia = media AND prec = baja AND daño = alto -> atk = baja
+37, 38.- vida restante propia = media AND prec = baja AND daño = medio/bajo -> atk = muy baja
+39.- vida restante propia = baja AND prec = alta AND daño = alto -> atk = alta
+40.- vida restante propia = baja AND prec = alta AND daño = medio -> atk = media
+41.- vida restante propia = baja AND prec = alta AND daño = bajo -> atk = baja
+42.- vida restante propia = baja AND prec = media AND daño = alto -> atk = media
+43.- vida restante propia = baja AND prec = media AND daño = medio -> atk = baja
+44.- vida restante propia = baja AND prec = media AND daño = bajo -> atk = muy baja
+45.- vida restante propia = baja AND prec = baja -> atk = muy baja
+
+------
+Reglas para situación crítica desfavorable (vida propia = nula vida enemigo != nula)
+
+Necesitamos comprobar la viabilidad de curarse y defenderse
+59.- vida restante propia = nula AND vida restante enemigo != nula AND vida def = nula AND vida cur = nula -> atk = muy baja AND def = media AND cur = media
+59.- vida restante propia = nula AND vida restante enemigo != nula AND vida def != nula AND vida cur = nula -> atk = muy baja AND def = muy alta AND cur = media
+59.- vida restante propia = nula AND vida restante enemigo != nula AND vida def = nula AND vida cur != nula -> atk = muy baja AND def = media AND cur = muy alta
+59.- vida restante propia = nula AND vida restante enemigo != nula AND vida def != nula AND vida cur != nula -> atk = muy baja AND def = muy alta AND cur = muy alta
+
+------
+Reglas para la priorización entre defensa y curación en situaciones de vida restante = nula
+
+Ante vidas esperadas iguales, preferimos la defensa porque no gasta recursos
+50.- IF vida_restante_propia_atacar IS Nula
+AND vida_restante_propia_curar IS Baja
+AND vida_restante_defenderse IS Baja
+THEN defenderse = Muy-alta
+	AND curarse = Baja
+
+51.- IF vida_restante_propia_atacar IS Nula
+AND vida_restante_propia_curar IS Media
+AND vida_restante_defenderse IS Media
+THEN defenderse = Muy-alta
+	AND curarse = Baja
+
+52.- IF vida_restante_propia_atacar IS Nula
+AND vida_restante_propia_curar IS Alta
+AND vida_restante_defenderse IS Alta
+THEN defenderse = Muy-alta
+	AND curarse = Baja
+
+Casos con diferencia entre las vidas restantes esperadas
+cur > def
+53.- IF vida_restante_propia_atacar IS Nula
+AND vida_restante_propia_curar IS Media
+AND vida_restante_defenderse IS Baja
+THEN defenderse = Media
+    AND curarse = muy alta
+
+54.- IF vida_restante_propia_atacar IS Nula
+AND vida_restante_propia_curar IS Alta
+AND vida_restante_defenderse IS Media
+THEN defenderse = Media
+    AND curarse = muy alta
+
+55.- IF vida_restante_propia_atacar IS Nula
+AND vida_restante_propia_curar IS Alta
+AND vida_restante_defenderse IS Baja
+THEN defenderse = Baja
+    AND curarse = muy alta
+
+def > cur
+53.- IF vida_restante_propia_atacar IS Nula
+AND vida_restante_propia_def IS Media
+AND vida_restante_cur IS Baja
+THEN defenderse = muy alta
+    AND curarse = media
+
+54.- IF vida_restante_propia_atacar IS Nula
+AND vida_restante_propia_def IS Alta
+AND vida_restante_cur IS Media
+THEN defenderse = muy alta
+    AND curarse = media
+
+55.- IF vida_restante_propia_atacar IS Nula
+AND vida_restante_propia_def IS Alta
+AND vida_restante_cur IS Baja
+THEN defenderse = muy alta
+    AND curarse = baja
+
+------
+Reglas para defensa y curación en condiciones normales
+
+56.- IF vida_restante_propia_atacar IS Media
+57.- OR vida_restante_propia_atacar IS Alta
+THEN defenderse = Muy-baja
+AND curarse = muy baja
+
+58.- IF vida_restante_propia_atacar IS Baja
+THEN defenderse = Baja/media
+AND curarse = baja/media
