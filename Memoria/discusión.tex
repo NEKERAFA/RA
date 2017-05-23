@@ -1,1 +1,12 @@
 \section{Discusión.}
+En base a los resultados obtenidos, podemos observar que estos sistemas pueden utilizarse para resolver este tipo de problema. Desgraciadamente, el espacio de tiempo asignado a la realización de esta práctica no nos ha permitido desarrollar tantas características como nos hubiera gustado, lo que hizo que nos tuviésemos que restringir a un caso sencillo. A continuación expondremos una serie de ideas que surgieron durante la realización de la práctica pero que tuvieron que ser descartadas.
+
+En etapas tempranas de realización de este trabajo se pensó en que se podría incluir la posibilidad de \textit{buffs} y \textit{debuffs} en las acciones a realizar, las cuales son muy comunes en juegos de rol de este estilo. Los \textit{buffs} y \textit{debuffs} permiten aumentar y disminuir, respectivamente, una o más características de un personaje de forma temporal.
+
+También se consideró modelar la mecánica de golpe crítico, es decir, un ataque que provoca más daño de lo normal y que ocurre con una cierta probabilidad dependiente del ataque. Finalmente se decidió no hacerlo durante la realización del sistema ya que se complicaba demasiado para el tiempo disponible (habría que tener en cuenta la probabilidad de hacer golpe crítico y el daño que un ataque de este tipo provocaría, además de las variables ya existentes).
+
+Otra de las ideas descartadas fue una variable que representase la cantidad de objetos curativos restantes del personaje. Esta variable se usaría en las reglas de curación para determinar cuándo era mejor curarse (o si era posible siquiera, ya que sin objetos no podría hacerlo). De manera similar, queríamos considerar el posible consumo de recursos al realizar un ataque (como podría ser el maná, muy común para contabilizar el uso de ataques mágicos, o la \textit{estamina} para ataques físicos). 
+
+Por otro lado, en un principio no íbamos a considerar la restricción de que el personaje controlado por el sistema difuso actuará primero, pero de nuevo vimos que el sistema se complicaba demasiado para el tiempo disponible (los criterios no son iguales actuando antes que actuando después, por lo que tendríamos que desarrollar reglas específicas para cada situación, y añadir algunas variables).
+
+Con todas las opciones descartadas, el sistema resultante sólo podría ser utilizado para decidir la acción a realizar en cada turno en un juego sencillo, pero creemos que tiene potencial para, una vez ampliado, ser utilizado en un juego más complejo.
