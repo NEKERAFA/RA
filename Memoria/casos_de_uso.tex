@@ -2,27 +2,11 @@
 
 Para comprobar el correcto funcionamiento del sistema desarrollado, hemos establecido una serie de casos de prueba representativos que se muestran a continuación:
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/casos_pruebas.png}
-	\caption{Casos de prueba 1}
-	\label{fig:casos_prueba1}
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/casos_pruebas1.png}
-	\caption{Casos de prueba 2}
-	\label{fig:casos_prueba2}
-\end{figure}
 
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/casos_pruebas2.png}
-	\caption{Casos de prueba 3}
-	\label{fig:casos_prueba3}
-\end{figure}
+
+
+
 Hemos elegido dividirlos en tres grupos:
 \begin{enumerate}
 	\item El enemigo no sobrevive al ataque.
@@ -30,9 +14,8 @@ Hemos elegido dividirlos en tres grupos:
 	\item El enemigo sobrevive y nuestro personaje también.
 \end{enumerate}
 
-
 \begin{enumerate}
-	
+
 	\item En el primer grupo, hemos elegido dos casos representativos, uno de los cuales se subdivide:
 	\begin{enumerate}[label={1.\arabic*.}]
 		\item La precisión es media-alta. Teniendo esto en cuenta, es fácil decidir que lo mejor es atacar, ya que el enemigo es muy probable que no sobreviva al ataque y por tanto el combate terminaría en una victoria. Como se puede observar en la tabla, el sistema devuelve un resultado coherente con el anterior razonamiento, dándole al Ataque una adecuación del 0,915, mientras que a Curación y Defensa sólamente un 0,189.
@@ -42,7 +25,36 @@ Hemos elegido dividirlos en tres grupos:
 			\item El personaje no sobrevive. Como es lógico, en este caso debemos pensar en Curación y Defensa como las opciones más viables y optar por una o la otra en función de la vida restante al realizar cada una de ellas. De nuevo, el sistema devuelve unos resultados razonables.
 		\end{enumerate}
 	\end{enumerate}
+\item[] \begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/casos_pruebas.png}
+	\caption{Casos de prueba 1}
+	\label{fig:casos_prueba1}
+\end{figure}
+
+\item[] \begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/ejecución_1_2_a.png}
+	\caption{Ejemplo de ejecución para el caso de uso 1.2.a}
+	\label{fig:casos_prueba1}
+\end{figure}
+
 \item El segundo grupo se asemeja al caso 1.2.b del primer grupo. Nuestro personaje no sobrevive al ataque, por lo que debe centrarse en Curación o Defensa. Igual que en el 2.b, debemos decidir en función de la vida restante, y seguimos obteniendo resultados lógicos.
+
+\item[]
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/casos_pruebas1.png}
+	\caption{Casos de prueba 2}
+	\label{fig:casos_prueba2}
+\end{figure}
+
+\item[] \begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/ejecución_2.png}
+	\caption{Ejemplo de ejecución para el caso de uso 2}
+	\label{fig:casos_prueba1}
+\end{figure}
 
 \item El último grupo es algo más complicado, ya que se deben tener en cuenta más factores para poder realizar una acción óptima, como el daño que vamos a realizar y la vida restante después de realizar un ataque. Podemos distinguir dos casos representativos, que a su vez se dividen en subcasos:
 \begin{enumerate}[label={3.\arabic*.}]
@@ -53,4 +65,20 @@ Hemos elegido dividirlos en tres grupos:
 	\end{enumerate}
 	\item La vida restante del personaje después de atacar es baja. Debemos tener cuidado, por lo que decidimos la adecuación de las tres opciones en función de la vida restante después de curarse y después de defenderse. Si ambas son tan bajas como la vida restante después de atacar, el ataque es la mejor opción. Sin embargo, en caso contrario, la adecuación será mayor para Curarse o Defenderse, dependiendo de la cantidad de vida restante en cada caso. Los resultados del sistema siguen, de nuevo, el razonamiento llevado a cabo.
 \end{enumerate}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/casos_pruebas2.png}
+	\caption{Casos de prueba 3}
+	\label{fig:casos_prueba3}
+\end{figure}
+
+\item[] \begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/ejecución_3_1_a.png}
+	\caption{Ejemplo de ejecución para el caso de uso 3.1.a}
+	\label{fig:casos_prueba1}
+\end{figure}
+
 \end{enumerate}
