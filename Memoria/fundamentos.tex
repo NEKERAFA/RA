@@ -10,7 +10,7 @@ su habilidad para combinar en forma unificada expresiones lingüísticas con
 datos numéricos, y el no requerir de algoritmos muy sofisticados para su
 implementación.
 
-La lógica tradicional (así como la teoría de conjuntos y el algebra booleana) son isomorfas\footnote{\url{http://matematica.laguia2000.com/general/isomorfismo}}, bajo transformaciones adecuadas, es decir, tienen una estructura similar, lo cual significa que, las definiciones hechas para cualquiera de las tres teorías se pueden llevar a las otras dos mediante transformaciones sencillas, mediante la correspondencia de operadores que se muestra en la \tableref{table:1}.
+La lógica tradicional (así como la teoría de conjuntos y el álgebra booleana) son isomorfas\footnote{\url{http://matematica.laguia2000.com/general/isomorfismo}}, bajo transformaciones adecuadas, es decir, tienen una estructura similar, lo cual significa que las definiciones hechas para cualquiera de las tres teorías se pueden llevar a las otras dos a través de transformaciones sencillas, mediante la correspondencia de operadores que se muestra en la \tableref{table:1}.
 
 
 
@@ -38,10 +38,10 @@ existen dentro de un Universo. Así, dado el universo U que consta de los númer
 podemos definir algunos conjuntos como\\
 \newline
 \null\hspace{0.59cm}\texttt{A = \{0,2,4,6,8\}},\newline
-\null\hspace{0.37cm}\texttt{ B=\{1,3,5,7,9\}},\newline
-\null\hspace{0.37cm}\texttt{ C=\{1,4,7\}} \ldots
+\null\hspace{0.37cm}\texttt{B = \{1,3,5,7,9\}},\newline
+\null\hspace{0.37cm}\texttt{C = \{1,4,7\}} \ldots
 
-De esta forma, hemos establecido a qué conjuntos pertenecen cada uno de los elementos del universo \texttt{U}. Cada uno de estos conjuntos queda perfectamente definido si utilizamos una función de pertenencia (\texttt{u(x)}) sobre los elementos del universo \texttt{U} de forma que, a cada elemento de \texttt{U} se le asigna un valor 1 o 0 si pertenece o no a dicho conjunto.
+De esta forma, hemos establecido a qué conjuntos pertenecen cada uno de los elementos del universo \texttt{U}. Cada uno de estos conjuntos queda perfectamente definido si utilizamos una función de pertenencia (\texttt{u(x)}) sobre los elementos del universo \texttt{U} de forma que a cada elemento de \texttt{U} se le asigna un valor 1 o 0 en función de si pertenece o no a dicho conjunto.
 
 Veamos como ejemplo la función de pertenencia que define el conjunto \texttt{C}
 \\ \newline
@@ -56,15 +56,12 @@ Veamos como ejemplo la función de pertenencia que define el conjunto \texttt{C}
 \null\hspace{0.59cm}\texttt{u\textsubscript{C}(8)} = 0;\\
 \null\hspace{0.59cm}\texttt{u\textsubscript{C}(9)} = 0;
 
-Un Conjunto difuso se define de forma similar, con una diferencia conceptual importante: un elemento puede pertenecer parcialmente a un conjunto.
-Pues bien, un Conjunto Difuso se define de forma similar, con una
-diferencia conceptual importante: un elemento puede pertenecer
-parcialmente a un conjunto. 
+Un Conjunto difuso se define de forma similar, con una diferencia conceptual importante: un elemento puede pertenecer parcialmente a un conjunto. 
 
 Continuemos con el universo \texttt{U} que definimos anteriormente.
 Un conjunto difuso D definido sobre dicho universo podría ser el siguiente:
 \\ \newline
-\null\hspace{0.59cm}\texttt{C=\{20\%/1,50\%/4,100\%/7\}}
+\null\hspace{0.59cm}\texttt{C = \{0.2/1,0.5/4,1/7\}}
 
 Con esta definición, estamos representando que el elemento 1 pertenece en un 20\% al
 conjunto \texttt{C} (y por tanto pertenece en un 80\% al complemento de \texttt{C}), mientras que
@@ -91,14 +88,20 @@ Como podemos ver, hay algunas diferencias sustanciales entre los Conjuntos Difus
 	\item Un elemento puede pertenecer (parcialmente) a un conjunto difuso y
 	simultáneamente pertenecer (parcialmente) al complemento de dicho
 	conjunto. Esto no es posible en los conjuntos concretos, ya que
-	constituiría una violación al \textit{principio del tercer excluido.}\footnote{\url{https://es.wikipedia.org/wiki/Principio_del_tercero_excluido}}
+	constituiría una violación al \textit{principio del tercero excluido.}\footnote{\url{https://es.wikipedia.org/wiki/Principio_del_tercero_excluido}}
 	\item Las fronteras de un conjunto concreto son exactas, en tanto que las de
 	un conjunto difuso son, precisamente, difusas, ya que existen elementos
 	en las fronteras mismas, y estos elementos están a la vez dentro y fuera
 	del conjunto.
 \end{itemize}
 
-En el mundo real, el hecho de que un elemento pueda pertenecer parcialmente a un conjunto tiene numerosas ventajas, veamos un ejemplo;
+No obstante, debemos tener en cuenta que:
+\begin{itemize}
+	\item Los Conjuntos Concretos son un caso particular de los Conjuntos Difusos.
+	\item Cualquier conjunto es difuminable.
+\end{itemize}
+
+En el mundo real, el hecho de que un elemento pueda pertenecer parcialmente a un conjunto tiene numerosas ventajas, veamos un ejemplo:
 
 \textit{Ejemplo 1:} Supóngase que se desea clasificar a los miembros de un equipo
 de fútbol según su estatura en tres conjuntos, Bajos, Medianos y Altos.
@@ -107,7 +110,7 @@ ejemplo, 160 cm, que se es Mediano si la estatura es superior o igual a 160
 cm e inferior a 180 cm, y se es alto si la estatura es superior o igual a 180
 cm, con lo que se lograría una clasificación en conjuntos concretos. \label{ej:1}
 
-Si embargo, es tan significativa la diferencia entre un jugador con estatura 179.9 cm y otro de 180 cm? Ese milímetro representa una diferencia tan significativa que tenemos que clasificar a los jugadores en dos conjuntos distintos? Utilizando Conjuntos Categóricos uno es alto y otro es mediano.
+Sin embargo, ¿es tan significativa la diferencia entre un jugador con estatura 179.9 cm y otro de 180 cm? ¿Ese milímetro representa una diferencia tan significativa que tenemos que clasificar a los jugadores en dos conjuntos distintos? Utilizando Conjuntos Concretos uno es alto y otro es mediano.
 
 Si se optase por efectuar la misma
 clasificación con conjuntos difusos estos cambios abruptos se evitarían,
@@ -143,7 +146,7 @@ intervalo [130,210]cm por ejemplo).
 	\label{fig:alternativas}	
 \end{figure}
 La forma de
-estas funciones de pertenencia no debe ser necesariamente la de la \figureref{fig:ej1} ,
+estas funciones de pertenencia no debe ser necesariamente la de la \figureref{fig:ej1},
 pues depende de lo que se entienda por ``Bajo'', ``Mediano'' y ``Alto''.
 En las \textit{figuras \ref{fig:fuzzy1} y \ref{fig:fuzzy2}} podemos ver otras alternativas para representar dichas funciones.
 
@@ -151,7 +154,7 @@ En las \textit{figuras \ref{fig:fuzzy1} y \ref{fig:fuzzy2}} podemos ver otras al
 La Inferencia lógica consiste en la combinación de proposiciones para
 producir nuevas proposiciones. Así, al combinar la proposición \texttt{``X es A''} con
 la proposición \texttt{``IF X es A THEN Y es B''}, se puede inferir la proposición \texttt{``Y es
-B''} (ver figura \figureref{fig:inf})
+B''} (ver \figureref{fig:inf}).
 
 \begin{figure}[H]
 	\centering
@@ -163,10 +166,10 @@ B''} (ver figura \figureref{fig:inf})
 Una inferencia como ésta sólo es posible en
 la lógica tradicional si la primera proposición \texttt{(``X es A'')} es idéntica a la
 primera parte de la segunda proposición \texttt{(``(IF) X es A'')}; sin embargo, en la
-lógica difusa estas dos proposiciones no necesariamente deben ser
+lógica difusa estas dos proposiciones no deben ser necesariamente
 idénticas, debido a que las fronteras de los conjuntos no son precisas. Así, al
 combinar la proposición \texttt{``X es A*''} con la proposición \texttt{``IF X es A THEN Y es
-B''}, puede obtenerse la proposición \texttt{``Y es B*''} (ver figura \figureref{fig:inf}).
+B''}, puede obtenerse la proposición \texttt{``Y es B*''} (ver figura \figureref{fig:inf1}).
 
 \begin{figure}[H]
 	\centering
