@@ -185,18 +185,13 @@ En la \figureref{fig:inferencia} podemos ver los mecanismos de Inferencia en Ló
 \end{figure}
 
 \subsection{Sistemas de lógica difusa}
-Los mecanismos de Inferencia permiten
-obtener Conjuntos difusos a partir de la combinación de Conjuntos difusos
-con reglas de la forma \texttt{IF... THEN...}; un Sistema de Lógica Difusa aprovecha
-esos mecanismos como el motor de cálculo de un sistema cuyas entradas y
-salidas son números concretos.
+Los mecanismos de Inferencia permiten simular el proceso de decisión humano utilizando implicaciones difusas y reglas de inferencia de lógica difusa. Un Sistema de Lógica Difusa aprovecha estos mecanismos como motor de cálculo de un sistema cuyas entradas y salidas son números concretos.
 
-En la \figureref{fig:sistemas_difusos} podemos ver la estructura básica de un Sistema de Lógica difusa.
-El sistema recibe varias entradas numéricas y entrega varias salidas
-numéricas. El bloque Difusor se encarga de convertir las entradas en
-conjuntos difusos, que son entregados al bloque Máquina de Inferencia que, utilizando las reglas de la forma \texttt{IF... THEN...} almacenadas en la Base de Reglas  este, produce varios conjuntos difusos para
-que el bloque Concresor los tome y los convierta en salidas numéricas
-concretas.
+En la \figureref{fig:sistemas_difusos} podemos ver la estructura básica de un Sistema de Lógica difusa. El
+sistema recibe varias entradas numéricas y entrega varias salidas numéricas. El bloque Difusor
+se encarga de convertir las entradas numéricas no difusas en datos difusos, las cuales indican su grado de pertenencia a cada conjunto.
+Estos datos son entregados al bloque Máquina de Inferencia que, utilizando las reglas de la forma \texttt{IF... THEN...} almacenadas en la Base de Reglas, produce una o más salidas difusas para que el bloque Concresor las convierta en salidas numéricas concretas.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.67]{images/sistemas_difusos.png}
@@ -207,9 +202,9 @@ concretas.
 
 Cada una de las variables de entrada y de salida tiene una representación
 dentro del Sistema de Lógica Difusa en forma de Variables Lingüísticas. Una
-variable lingüística tiene, entre otras cosas, una colección de atributos que
-puede adquirir la variable, y cada atributo está representado por un conjunto
+variable lingüística tiene, entre otras cosas, una colección de valores que
+puede adquirir la variable, y cada valor está representado por un conjunto
 difuso. Así, retomando el ejemplo de la \figureref{fig:ej1}, la variable Estatura tendría
-tres atributos, Bajo, Mediano y Alto, y cada uno de estos atributos estaría
-representado por el conjunto difuso respectivo de la \figureref{fig:ej1}. Estos atributos
+tres valores, Bajo, Mediano y Alto, y cada uno de estos valores estaría
+representado por el conjunto difuso respectivo de la \figureref{fig:ej1}. Estos valores
 reciben el nombre de Valores Lingüísticos.
