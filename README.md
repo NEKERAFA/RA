@@ -1,4 +1,8 @@
-﻿# Repositorio de RA
+﻿# Repositorio de Razonamiento Automático
+
+Prática de la asignatura de Razonamiento Automático del curso 2016-2017
+
+Facultade de Informática (FIC) da Universidad da Couña (UDC)
 
 ## Descarga del repositorio
 
